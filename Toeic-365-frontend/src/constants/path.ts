@@ -6,4 +6,5 @@ export const Path = {
     ExamIntro: "/toeictest/introtest/2021/:id",
     FullExam: "/toeictest/fulltest/2021/:id",
     Admin: "/admin",
+    HistoryExam: "/histories-exam/:id"
 }

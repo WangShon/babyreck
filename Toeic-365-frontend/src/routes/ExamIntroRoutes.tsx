@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
 import { Path } from "../constants/path";
-import ExamIntro from "../pages/user/TestOnline/intro/2020/ExamIntro";
+import ExamIntro from "../pages/user/TestOnline/intro/2023/ExamIntro";
 
 export default function ExamIntroRoutes() {
     return (

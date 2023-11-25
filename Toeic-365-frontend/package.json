@@ -22,7 +22,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-transition-group": "^4.4.1",
-    "antd": "^4.15.0",
+    "antd": "^4.24.15",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.1",
