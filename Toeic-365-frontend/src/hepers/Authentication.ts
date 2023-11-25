@@ -1,6 +1,6 @@
 import cookie from "js-cookie";
 
-const TOKEN_KEY: string = "TOKEN_KEY";
+export const TOKEN_KEY: string = "TOKEN_KEY";
 const USER_INFO: string = "USER_INFO";
 
 export const setCookie = (key: string, value: any) => {
