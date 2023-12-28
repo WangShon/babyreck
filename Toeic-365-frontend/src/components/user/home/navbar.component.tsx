@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useHistory} from "react-router-dom";
 
 import "./bootstrap.min.scoped.css";
 import 'bootstrap/dist/js/bootstrap.js';
@@ -13,7 +13,7 @@ import { Avatar } from 'primereact/components/avatar/Avatar';
 function NavbarComponent() {
 
     let history = useHistory();
-    const [user, setUser]: any = useState();
+    const [user, setUser]: any = useState(null);
 
     const getCurrentUser = async () => {
         try {
@@ -40,31 +40,27 @@ function NavbarComponent() {
             <div className="container">
                 <div className="main-menu">
                     <nav className="navbar navbar-expand-lg navbar-light">
-                        <Link className="navbar-brand" to="/">
+                        <Link className="navbar-brand" to="#">
                             <img src="https://toeicexamstore.com/websites/images/toeiclogo.png"
-                                style={{ width: "40px", height: "40px" }}
-                                alt="logo"
+                                 style={{width: "40px", height: "40px"}}
+                                 alt="logo"
                             />
                             <b className="ml-3">TOEIC365</b>
                         </Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon" />
+                                data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"/>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
-                            <div className="mr-auto" />
+                            <div className="mr-auto"/>
                             <ul className="navbar-nav">
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/">home</Link>
                                 </li>
 
                                 <li className="nav-item">
-                                    <Link className="nav-link online-link" to="/toeictest">test online</Link>
-                                </li>
-
-                                <li className="nav-item">
-                                    <Link className="nav-link online-link" to={`/histories-exam/${user?.id}`}>histories exam</Link>
+                                    <Link className="nav-link online-link" to="./toeictest">test online</Link>
                                 </li>
                                 {user ? <>
                                     <li className="nav-item dropdown d-flex">
@@ -73,7 +69,7 @@ function NavbarComponent() {
                                             {user.fullName}
                                         </Link>
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            {user.roles[0] === 'ROLE_ADMIN' ? <Link className="dropdown-item" to="./admin"><i className="bi bi-person" /> Admin</Link> : <></>}
+                                            {user.roles[0] === 'ROLE_ADMIN' ? <Link className="dropdown-item" to="./admin"><i className="bi bi-person"/> Admin</Link> : <></>}
                                             <a onClick={handleLogout} className="dropdown-item" href="/"><i className="bi bi-box-arrow-right" /> Sign Out</a>
                                         </div>
                                     </li>
