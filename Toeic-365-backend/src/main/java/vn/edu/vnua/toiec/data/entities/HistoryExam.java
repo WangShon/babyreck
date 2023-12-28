@@ -5,10 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import vn.edu.vnua.toiec.presentation.model.ExamResponse;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table(name = "history_exam")
@@ -20,10 +20,10 @@ public class HistoryExam {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Integer timeOfExam;
     private BigDecimal listeningScore;
     private BigDecimal readingScore;
+    private Date createAt;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)

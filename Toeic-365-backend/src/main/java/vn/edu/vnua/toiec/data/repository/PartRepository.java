@@ -2,6 +2,7 @@ package vn.edu.vnua.toiec.data.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import vn.edu.vnua.toiec.data.entities.Part;
 
@@ -37,4 +38,11 @@ public interface PartRepository extends JpaRepository<Part, Long> {
     List<Part> findAllNumberPartSeven();
 
     Boolean existsByNumberPart(String numberPart);
+
+    @Query("select count(q.id) from Part p " +
+            "join GroupQuestion gq on gq.part.id = p.id " +
+            "join Question q on q.groupQuestion.id = gq.id " +
+            "where p.id = :groupQuestion " +
+            "group by q.groupQuestion.id")
+    Integer getQuestionOfPart(@Param("groupQuestion") Long partId);
 }

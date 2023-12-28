@@ -18,7 +18,7 @@ public interface ExamService {
 
     ExamResponse getIntroExamById(Long id);
 
-    Exam update(ExamRequest examRequest);
+    Exam update(ExamRequest examRequest) throws Exception;
 
     Exam delete(Exam exam);
 

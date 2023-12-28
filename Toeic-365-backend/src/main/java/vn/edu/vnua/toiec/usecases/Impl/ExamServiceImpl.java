@@ -86,7 +86,7 @@ public class ExamServiceImpl implements ExamService {
     }
 
     @Override
-    public Exam update(ExamRequest examRequest) {
+    public Exam update(ExamRequest examRequest) throws Exception {
         Exam exam = examRepository.findById(examRequest.getId()).orElseThrow(() -> new RuntimeException("id exam not found"));
         exam.setExamName(examRequest.getExamName());
         exam.setTotalTime(examRequest.getTotalTime());

@@ -18,6 +18,8 @@ import vn.edu.vnua.toiec.presentation.model.HistoryExamResponse;
 import vn.edu.vnua.toiec.presentation.model.UserDTO;
 import vn.edu.vnua.toiec.usecases.HistoryExamService;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,6 +48,7 @@ public class HistoryExamImpl implements HistoryExamService {
         historyExam.setTimeOfExam(count);
         historyExam.setListeningScore(historyExamRequest.getListeningScore());
         historyExam.setReadingScore(historyExamRequest.getReadingScore());
+        historyExam.setCreateAt(new Date());
 
         ExamResponse examResponse = examRepository.findExamById(historyExamRequest.getExamId());
         ExamMapper examMapper = new ExamMapper();

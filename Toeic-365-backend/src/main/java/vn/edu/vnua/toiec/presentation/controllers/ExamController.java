@@ -46,7 +46,7 @@ public class ExamController {
     }
 
     @PostMapping("update")
-    public ResponseEntity<Exam> updateExamById(@RequestBody ExamRequest examRequest) {
+    public ResponseEntity<Exam> updateExamById(@RequestBody ExamRequest examRequest) throws Exception {
         return new ResponseEntity<>(examService.update(examRequest), HttpStatus.OK);
     }
 
